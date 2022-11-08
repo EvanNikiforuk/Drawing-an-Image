@@ -1,4 +1,8 @@
-//Globl Variables
+//To Do, add the printlns to verify the values
+//Algorithm works when image is bigger than the CANVAS, not smaller
+//Different Algorithm is necessary - work to get above 65%
+//
+//Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
 float smallerDimension, largerDimension, imageWidthRatio=0.0, imageHeightRatio=0.0;
@@ -12,39 +16,62 @@ appWidth = width;
 appHeight = height;
 //
 //Aspect Ratio of Background Image
-//e1347a4e302f8b4fa252481a828d277b.jpg
-int picWidth = 400;
-int picHeight = 400;
+//Obi-wan-star-wars-jedi-23864621-800-600.jpg
+//Note: Dimensions are found in the image file / Right Click / Properties / Details
+int picWidth = 800;
+int picHeight = 600;
 //Image Orientation: Landscape, Square, Portrait
-if ( picWidth >= picHeight ) {//True if Landscape or Square
+if ( picWidth >= picHeight ) { //True if Landscape or Square
   largerDimension = picWidth;
   smallerDimension = picHeight;
   widthLarger = true;
-} else { //False if portrait
+} else { //False if Portrait
   largerDimension = picHeight;
   smallerDimension = picWidth;
   heightLarger = true;
 }
 //
-//Aspect Ratio Calcuations
-if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
-if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
-if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
-if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
-//Population
-pic = loadImage("../Images Used/e1347a4e302f8b4fa252481a828d277b.jpg");
-backgroundImageX = appWidth * 0;
-backgroundImageY = appHeight * 0;
-backgroundImageWidth = appWidth - 1;
-backgroundImageHeight = appHeight - 1;
+/*Aspect Ratio Calculations, Older Calculations
+ if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
+ if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
+ if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
+ if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
+ */
 //
-// Adjust Iamge Variables for Aspect Ratio
-float picWidthAdjusted, picHeightAdjusted;
-picWidthAdjusted = backgroundImageWidth * imageWidthRatio;
-picHeightAdjusted = backgroundImageHeight * imageHeightRatio;
+//Better Image Stretch Algorithm
+float picWidthAdjusted=0.0, picHeightAdjusted=0.0;
+//We know the width is the larger dimension
+if ( appWidth >= picWidth ) {
+  picWidthAdjusted = appWidth; //Stretching larger dimension
+  //
+  if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
+  if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
+  //
+  if ( appHeight >= picHeight ) {
+    //Calculated Dimension b/c smaller than width
+    if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
+    if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
+    picHeightAdjusted = picWidthAdjusted * imageHeightRatio;
+  } else {
+    //Image smaller than CANVAS needs separate algorithm
+  }
+} else {
+  //Image smaller than CANVAS, needs separate algorithm
+}
+//
+//Population
+pic = loadImage("../Images Used/HD-wallpaper-giraffe-funny-landscape-animals.jpg");
+backgroundImageX = appWidth*0;
+backgroundImageY = appHeight*0;
+backgroundImageWidth = appWidth-1;
+backgroundImageHeight = appHeight-1;
+//
+println( appWidth, picWidth, picWidthAdjusted );
+println( appHeight, picHeight, picHeightAdjusted );
+//
 //Rectangular Layout and Image Drawing to CANVAS
 //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 //
-if ( nightMode == false) tint(255, 64); //Gray Scale, Day use: use 1/2 int value for white (i.e. 128/255=1/2)
-if ( nightMode == true) tint(64, 64, 45); //RGB: Night Mode
-image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted );
+if ( nightMode == false ) tint(255, 64); //Gray Scale, Day use: use 1/2 tint value for white (i.e. 128/256=1/2)
+if ( nightMode == true ) tint(64, 64, 40); //RGB: Night Mode
+image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
