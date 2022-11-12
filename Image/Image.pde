@@ -94,11 +94,11 @@ void setup()
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
   backgroundImageHeight = appHeight-1;
-  topX = appWidth * 0.7/4;
-  topY = appHeight * 0.3/4;
-  topWidth = appWidth * 13/20;
-  topHeight = appHeight * 10/20;
-  bottomX = appWidth * 1/2;
+  topX = appWidth * 0.4/4;
+  topY = appHeight * 0.2/4;
+  topWidth = appWidth * 5/20;
+  topHeight = appHeight * 12/20;
+  bottomX = appWidth * 2.5/4;
   bottomY = appHeight * 2.8/4;
   bottomWidth = appWidth * 7/20;
   bottomHeight = appHeight * 5/20;
