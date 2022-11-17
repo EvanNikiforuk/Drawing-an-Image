@@ -28,15 +28,7 @@ void setup()
   int picHeight = 600;
   int picWidth2 = 1700;//Car image
   int picHeight2 = 920;
-<<<<<<< Updated upstream
-  int picWidth3 = 735;
-=======
-<<<<<<< HEAD
   int picWidth3 = 735;//Tall man image
-=======
-  int picWidth3 = 735;
->>>>>>> 207c96c7f29dfeb0fb8933174b2e54915dc02d5b
->>>>>>> Stashed changes
   int picHeight3 = 900;
   //
   //Image Orientation: Landscape, Square, Portrait
@@ -87,31 +79,16 @@ void setup()
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
   backgroundImageHeight = appHeight-1;
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
   topX = appWidth * 0.15/4;
   topY = appHeight * 0.3/4;
   topWidth = appWidth * 8/20;
   topHeight = appHeight * 11/20;
   bottomX = appWidth * 1/2;
-=======
-=======
->>>>>>> 207c96c7f29dfeb0fb8933174b2e54915dc02d5b
->>>>>>> Stashed changes
   topX = appWidth * 0.4/4;
   topY = appHeight * 0.2/4;
   topWidth = appWidth * 5/20;
   topHeight = appHeight * 12/20;
   bottomX = appWidth * 2.5/4;
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
->>>>>>> 8b6961e94dc5aaa8d4254a3f57f1828fcc78f8c9
-=======
->>>>>>> 207c96c7f29dfeb0fb8933174b2e54915dc02d5b
->>>>>>> Stashed changes
   bottomY = appHeight * 2.8/4;
   bottomWidth = appWidth * 7/20;
   bottomHeight = appHeight * 5/20;
