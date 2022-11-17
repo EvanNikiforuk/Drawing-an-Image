@@ -72,22 +72,23 @@ void setup()
   }
   //
   //Population
-  pic = loadImage("../Images Used/Landscape/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
-  pic2 = loadImage("../Images Used/Landscape/bike.jpg");
-  pic3 = loadImage("../Images Used/Portrait/10-star-wars-darth-vader-portrait-wallpaper-1-325x485.jpg");
+  pic = loadImage("../Images Used/Landscape/HD-wallpaper-giraffe-funny-landscape-animals.jpg");
+  pic2 = loadImage("../Images Used/Landscape/b566e3e5-toyota-86-wide-body-kit-326power-tuning-0.jpg");
+  pic3 = loadImage("../Images Used/Portrait/An-advert-from-Macys-shows-exactly-what-you-need-to-avoid-as-a-tall-man-735x900.jpg");
   backgroundImageX = appWidth*0;
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
   backgroundImageHeight = appHeight-1;
-  topX = appWidth * 1/4;
-  topY = appHeight * 1/20;
-  topWidth = appWidth * 1/2;
-  topHeight = appHeight * 13/20;
-  bottomX = appWidth *1/2;
-  bottomY = appHeight * 3/4;
-  bottomWidth = appWidth * 1/4;
-  bottomHeight = appHeight * 4/20;
+  topX = appWidth * 0.4/4;
+  topY = appHeight * 0.2/4;
+  topWidth = appWidth * 5/20;
+  topHeight = appHeight * 12/20;
+  bottomX = appWidth * 2.5/4;
+  bottomY = appHeight * 2.8/4;
+  bottomWidth = appWidth * 7/20;
+  bottomHeight = appHeight * 5/20;
   //
+
   //Verify Variable Values after Algorithm
   println("App Width:", appWidth, " and App Height:", appHeight);
   println("Image dimensions are:", picWidth, picHeight);
